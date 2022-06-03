@@ -8,7 +8,7 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = (function (arrayOfString, index) {
+const createDate = function (arrayOfString, index) {
   let dateEpoch = [];
 
   if (index === undefined) {
@@ -22,18 +22,18 @@ const createDate = (function (arrayOfString, index) {
     dateEpoch.push(Date.parse(arrayOfString[index]) / 1000);
     return dateEpoch.toString();
   }
-})(
-  // ! JANGAN DIMODIFIKASI
-  () => {
-    // IIFE
+};
 
-    // '1546387200-1580662800-1614841200-1617573600-1651802400' (dalam string)
-    console.log(createDate?.(dates));
+// ! JANGAN DIMODIFIKASI
+(() => {
+  // IIFE
 
-    // '1614841200' (dalam string)
-    console.log(createDate?.(dates, 2));
-  }
-)();
+  // '1546387200-1580662800-1614841200-1617573600-1651802400' (dalam string)
+  console.log(createDate?.(dates));
+
+  // '1614841200' (dalam string)
+  console.log(createDate?.(dates, 2));
+})();
 
 module.exports = {
   dates,
